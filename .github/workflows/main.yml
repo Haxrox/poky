@@ -1,5 +1,5 @@
 name: poky builder
-run-name: "[${{ github.actor }}] ${{ github.base_ref }} - Poky build"
+run-name: "[${{ github.actor }}] ${{ github.ref_name }} - Poky build"
 
 on:
   push:
