@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Info command
+        run: |
+          fdisk -l
+          df -h
       - name: Checkout Yocto actions
         uses: Haxrox/yocto-build-actions@main
         with:
