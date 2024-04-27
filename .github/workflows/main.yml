@@ -1,0 +1,22 @@
+name: poky builder
+run-name: "${{ github.actor }} | ${{ github.run_number }} - ${{ github.run_id }}"
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Yocto actions
+        uses: Haxrox/yocto-build-actions@main
+        with:
+          init-command: "source oe-init-build-env"
+          sstate-cache-dir: "poky/build/sstate-cache"
+          deploy-dir: "poky/build/tmp/"
+          build-dir: "poky/build"
+          tmp-dir: "poky/build/tmp/deploy/images"
+          image-name: "core-image-sato"
+          bake-command: "bitbake ${image-name}"
