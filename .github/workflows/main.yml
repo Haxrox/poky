@@ -1,5 +1,5 @@
 name: poky builder
-run-name: "${{ github.actor }} | ${{ github.run_number }} - ${{ github.run_id }}"
+run-name: "[${{ github.actor }}] Poky build"
 
 on:
   push:
@@ -14,9 +14,9 @@ jobs:
         uses: Haxrox/yocto-build-actions@main
         with:
           init-command: "source oe-init-build-env"
-          sstate-cache-dir: "poky/build/sstate-cache"
-          deploy-dir: "poky/build/tmp/"
-          build-dir: "poky/build"
-          tmp-dir: "poky/build/tmp/deploy/images"
+          # sstate-cache-dir: "poky/build/sstate-cache"
+          # deploy-dir: "poky/build/tmp/"
+          # build-dir: "poky/build"
+          # tmp-dir: "poky/build/tmp/deploy/images"
           image-name: "core-image-sato"
-          bake-command: "bitbake ${image-name}"
+          # bake-command: "bitbake ${image-name}"
