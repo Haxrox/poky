@@ -1,5 +1,5 @@
 name: poky builder
-run-name: "[${{ github.actor }}] Poky build"
+run-name: "[${{ github.actor }}] ${{ github.base_ref }} - Poky build"
 
 on:
   push:
@@ -18,5 +18,5 @@ jobs:
           # deploy-dir: "poky/build/tmp/"
           # build-dir: "poky/build"
           # tmp-dir: "poky/build/tmp/deploy/images"
-          image-name: "core-image-sato"
+          image-name: "core-image-minimal"
           # bake-command: "bitbake ${image-name}"
